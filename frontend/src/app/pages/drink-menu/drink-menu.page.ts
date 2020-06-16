@@ -13,7 +13,7 @@ export class DrinkMenuPage implements OnInit {
   Object = Object;
 
   constructor(
-    private auth: AuthService,
+    public auth: AuthService,
     private modalCtrl: ModalController,
     public drinks: DrinksService
     ) { }

@@ -7,7 +7,7 @@
 
 <ion-content *ngIf="drink">
     <app-drink-graphic [drink]="drink"></app-drink-graphic>
-
+    <!-- (ngSubmit)="logForm()" -->
     <form (ngSubmit)="logForm()">
       <ion-item>
         <ion-label>Drink Title</ion-label>

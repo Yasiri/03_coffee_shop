@@ -13,7 +13,7 @@ export class DrinkFormComponent implements OnInit {
   @Input() isNew: boolean;
 
   constructor(
-    public auth: AuthService,
+    private auth: AuthService,
     private modalCtrl: ModalController,
     private drinkService: DrinksService
     ) { }

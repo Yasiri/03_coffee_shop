@@ -3,6 +3,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 
 import { environment } from '../../environments/environment';
 
+
 const JWTS_LOCAL_KEY = 'JWTS_LOCAL_KEY';
 const JWTS_ACTIVE_INDEX_KEY = 'JWTS_ACTIVE_INDEX_KEY';
 
@@ -31,12 +32,23 @@ export class AuthService {
     return link;
   }
 
+  build_logout_link(callbackPath = '') {
+    let link = 'https://';
+    link += this.url + '.auth0.com/v2';
+    link += '/logout?returnTo=';
+    link += 'http://localhost:8100/tabs/user-page' + '&';
+    link += 'client_id=' + this.clientId;
+    return link;
+  }
+
+
+
   // invoked in app.component on load
   check_token_fragment() {
     // parse the fragment
     const fragment = window.location.hash.substr(1).split('&')[0].split('=');
     // check if the fragment includes the access token
-    if ( fragment[0] === 'access_token' ) {
+    if (fragment[0] === 'access_token') {
       // add the access token to the jwt
       this.token = fragment[1];
       // save jwts to localstore

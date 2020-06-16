@@ -52,30 +52,41 @@ The `--reload` flag will detect file changes and restart the server automaticall
 
 ### Setup Auth0
 
-1. Create a new Auth0 Account
-2. Select a unique tenant domain
-3. Create a new, single page web application
+1. Create a new Auth0 Account ## yaser_nami
+2. Select a unique tenant domain ## fsndcoffeeshop3
+3. Create a new, single page web application ## CoffeeShopService
 4. Create a new API
     - in API Settings:
-        - Enable RBAC
-        - Enable Add Permissions in the Access Token
+        - Enable RBAC ## Done
+        - Enable Add Permissions in the Access Token ## Done
 5. Create new API permissions:
     - `get:drinks-detail`
     - `post:drinks`
     - `patch:drinks`
     - `delete:drinks`
-6. Create new roles for:
-    - Barista
+6. Create new roles for: ## Done
+    - Barista 
         - can `get:drinks-detail`
     - Manager
         - can perform all actions
-7. Test your endpoints with [Postman](https://getpostman.com). 
-    - Register 2 users - assign the Barista role to one and Manager role to the other.
-    - Sign into each account and make note of the JWT.
-    - Import the postman collection `./starter_code/backend/udacity-fsnd-udaspicelatte.postman_collection.json`
-    - Right-clicking the collection folder for barista and manager, navigate to the authorization tab, and including the JWT in the token field (you should have noted these JWTs).
-    - Run the collection and correct any errors.
-    - Export the collection overwriting the one we've included so that we have your proper JWTs during review!
+7. Test your endpoints with [Postman](https://getpostman.com).  ## Done
+    - Register 2 users - assign the Barista role to one and Manager role to the other. ## Done
+    - Sign into each account and make note of the JWT. ## Done
+    - Import the postman collection `./starter_code/backend/udacity-fsnd-udaspicelatte.postman_collection.json` 
+    - Right-clicking the collection folder for barista and manager, navigate to the authorization tab, and including the JWT in the token field (you should have noted these JWTs). ## Done
+    - Run the collection and correct any errors. ## Done
+    - Export the collection overwriting the one we've included so that we have your proper JWTs during review! ## DONE
+
+https://{{YOUR_DOMAIN}}/authorize?audience={{API_IDENTIFIER}}&response_type=token&client_id={{YOUR_CLIENT_ID}}&redirect_uri={{YOUR_CALLBACK_URI}}
+
+https://fsndcoffeeshop3.auth0.com/authorize?audience=coffeeShop&response_type=token&client_id=cIt2VtzllqehX7BxNiwGiughSgdG3tXk&redirect_uri=http://localhost:8100/tabs/user-page
+
+## yasser6903 barista:
+eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InItMXpwZjhHbDZRdDAtV0dpc2pITiJ9.eyJpc3MiOiJodHRwczovL2ZzbmRjb2ZmZWVzaG9wMy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWVkZmVlYjRmMmE3ODMwMDE5NjA0MGIxIiwiYXVkIjoiY29mZmVlU2hvcCIsImlhdCI6MTU5MjI5NDE3NCwiZXhwIjoxNTkyMzgwNTc0LCJhenAiOiJjSXQyVnR6bGxxZWhYN0J4Tml3R2l1Z2hTZ2RHM3RYayIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZ2V0OmRyaW5rcy1kZXRhaWwiXX0.CB9ATedIaoG1WQaMuiXZRs6UhcJv4ntK8IGYYepI9OUyPz4L3M-mICgNY1nVztbWIYXi3e1QFqF9NbnxHkjr1ninOCMokOTvdHz_BLI5ApkHLF4DdORbpsKbXcQKUsAgJQfFJgelT-meK9hs9trD3NVo7Q1rJgKGd_7NxuwZJ5FibUPaWFzsuUlAXnOjmMcjSnLMMyYpvAmRXUiDn3WnGODp4wzjLjCTaFSXEZAUMxsYeQYLOTfwDZJz4f-n0EB_REwAwXi2kWd0_mo0Q7qeJZLYxPkHjzLFF1yCuwHgXfbLiwe3aFNc27aWriKFrr8NPwrYMC8jf9q8w3KJIS4AsA4
+
+
+## yaser_nami manager:
+eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InItMXpwZjhHbDZRdDAtV0dpc2pITiJ9.eyJpc3MiOiJodHRwczovL2ZzbmRjb2ZmZWVzaG9wMy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWVkZmVlOWNmMmE3ODMwMDE5NjA0MDgyIiwiYXVkIjoiY29mZmVlU2hvcCIsImlhdCI6MTU5MjI5NDAyMSwiZXhwIjoxNTkyMzgwNDIxLCJhenAiOiJjSXQyVnR6bGxxZWhYN0J4Tml3R2l1Z2hTZ2RHM3RYayIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmRyaW5rcyIsImdldDpkcmlua3MtZGV0YWlsIiwicGF0Y2g6ZHJpbmtzIiwicG9zdDpkcmlua3MiXX0.ghx1K_RbF3yY9AQ--4ETmCeo9-x7gAbEk42Pkjc4mej7dB29LUlMrqOPR_U2jhckMa2sEi_sHY3Unzg6wX7dVBaclGaQb5KmdDeflXPKcCwwYG00SSoGKT_Q1V1IpruTndg2sJTrX3ePpt1FM_4-NF39-rKSKcxQTbNd_aqEm9n6SHE9ECJw-kRovIoecHpYQygaBJKFe5vRQfmjmYDSopXhM0lqBWFJtTQ_6yfcvoY5nwVNZlTfLKBbmQ0WOzUeIG2eb7EDZcHLQd40s4HrThQyqcOtC-CQBd1GbNZHtvpn8Jg1YCUF1Q6J6i9yyWpw_bG1C9j_4KxslZu9VjSfXA
 
 ### Implement The Server
 
